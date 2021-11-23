@@ -32,6 +32,63 @@ def draw():
     obj.body() 
     m1.moving()
     o1.stall()
+    
+
+
+
+def mousePressed():
+    
+    global b
+    
+    if(b==0):
+        noLoop()
+        b=1
+    else:
+        loop()
+        b=0
+       
+
+value=1
+
+class parkinglot:
+    
+    def parking(self):
+        
+        fill(255)
+        rect(80,300,1750,550)
+        fill(155)
+        rect(90,310,1730,530)
+        x=0
+        y=0
+        
+
+        
+        for i in range(0,6):        #Creating parking spaces
+        
+            if(i<3):                #left rectangles
+            
+                if(i==0):
+                    y=330
+                    
+                x=110
+                fill(255)
+                rect(x,y,800,120)
+                y+=175
+                
+            else:                   #right rectangles
+                
+                if(i==3):
+                    y=330
+                    
+                x=1000
+                fill(255)
+                rect(x,y,800,120)
+                y+=175
+        
+
+p1=parkinglot()
+
+
 class Gate:
     
     #stat = True
@@ -203,7 +260,9 @@ class street:
         
         
 s1=street()
-
+        
+        
+        
 class parkingstall:
     
     def stall(self):
@@ -244,7 +303,7 @@ o1=parkingstall()
 
         
 class move:
-    
+     
     
     def __init__(self,x1,y1,x2,y2,counter):
         
@@ -253,7 +312,7 @@ class move:
         self.x2=x2
         self.y2=y2
         self.counter=counter
-    
+     
     
     def moving(self):
         
@@ -290,7 +349,7 @@ class move:
                 occupied.append(colorselector_row)
                 occupied.append(colorselector_col)
                 print(occupied)
-            
+             
                 
         
             
@@ -302,16 +361,31 @@ class move:
         w1+=50
         rect(w2,210,20,45)
         w2+=50
-        
+         
         global vacant_lot
         vacant_lot=int(random(0,90))
         
         fill(31,222,220)
-    
+     
         rect(self.x2,self.y2,100,60)
         fill(0)  
         rect(w4,895,20,45)
         rect(w3,895,20,45)
     
+        if(self.x2>1900 and vacant_lot==2 and len(occupied)>0):  
+                   
+            self.x2=850
+            w3=865
+            w4=910
+            occupied=occupied[2:]
+            exit_condition=True
         
+        self.x2+=50
+        w3+=50
+        w4+=50
+        fill(255)
+    
         
+
+    
+m1=move(0,205,2000,890,0)
