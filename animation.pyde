@@ -255,5 +255,63 @@ class move:
         self.counter=counter
     
     
+    def moving(self):
+        
+        global gate_condition,exit_condition
+        
+        global no_of_customers,w1,w2,w3,w4
+        
+        fill(31,222,220)
+        
+        if(self.x1>1900):  
+                  
+            self.x1=0
+            w1=15
+            w2=65
+            gate_condition=False
+            exit_condition=False
+            
+        if(self.x1==950):
+            choice=int(random(1,3))
+            
+            if(choice==1):
+
+                gate_condition=True
+                no_of_customers+=1
+                self.x1=0
+                w1=15
+                w2=65
+                self.counter+=1
+                global colorselector_row
+                colorselector_row=int(random(0,6))
+                global colorselector_col
+                colorselector_col=int(random(0,10)) 
+                global occupied
+                occupied.append(colorselector_row)
+                occupied.append(colorselector_col)
+                print(occupied)
+            
+                
+        
+            
+                 
+        rect(self.x1,self.y1,100,60)
+        self.x1+=50
+        fill(0)
+        rect(w1,210,20,45)
+        w1+=50
+        rect(w2,210,20,45)
+        w2+=50
+        
+        global vacant_lot
+        vacant_lot=int(random(0,90))
+        
+        fill(31,222,220)
+    
+        rect(self.x2,self.y2,100,60)
+        fill(0)  
+        rect(w4,895,20,45)
+        rect(w3,895,20,45)
+    
         
         
