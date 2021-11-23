@@ -203,6 +203,57 @@ class street:
         
         
 s1=street()
+
+class parkingstall:
+    
+    def stall(self):
         
+        y=335
+        
+        for i in range (0,6):
+            
+            x=115
+            
+            for j in range(0,10):
+                
+    
+                fill(37,216,98)
+                
+                for k in range(1,len(occupied)+2,2):
+                    
+                    if(len(occupied)>2 and occupied[len(occupied)-k]==j and occupied[len(occupied)-(k+1)]==i):
+                        fill(245,35,35)
+                    
+                    elif(len(occupied)!= 0 and occupied[0]==i and occupied[1]==j):
+                        fill(245,35,35)  
+                                  
+                    
+                rect(x,y,150,50)
+                if(j==4):
+                    x+=250
+                else:
+                    x+=160
+                    
+            if(i%2!=0):
+                y+=115
+            else:
+                y+=60
+                            
+                
+o1=parkingstall()
+
+        
+class move:
+    
+    
+    def __init__(self,x1,y1,x2,y2,counter):
+        
+        self.x1=x1
+        self.y1=y1
+        self.x2=x2
+        self.y2=y2
+        self.counter=counter
+    
+    
         
         
