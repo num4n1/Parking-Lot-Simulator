@@ -15,3 +15,21 @@ w3=2000
 w4=2000
 gate_condition=False
 exit_condition=False
+
+def setup():
+    
+    smooth()
+    frameRate(60)
+    size(1920,1080)
+    background(26,183,79)
+    p1.parking()
+
+
+def draw():
+    
+    delay(100)
+    s1.street_design()
+    obj.body() 
+    m1.moving()
+    o1.stall()
+    
