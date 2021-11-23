@@ -32,4 +32,52 @@ def draw():
     obj.body() 
     m1.moving()
     o1.stall()
+class Gate:
+    
+    #stat = True
+    #sp = 0
+    def __init__(self, s, status):
+        self.stat = status
+        self.sp = s
+
+    #space = str(sp)
+    
+    def body(self):
+        
+        global gate_condition
+        textSize(15)
+        fill(255)
+        strokeWeight(2)
+        fill(51,158,222)
+        rect(805, 300, 100, 20)
+        fill(255)
+        rect(805, 320, 100, 20)
+        rect(805, 825, 100, 20)
+        rect(805, 845, 100, 20)
+        fill(0)
+        text("Entry", 825, 315)
+        text("Exit", 825, 840)
+        text("Spaces:"+ str(60-len(occupied)/2), 825, 335)
+        
+        if(gate_condition):
+            strokeWeight(8)
+            line(910, 320, 995, 350)
+        
+        else:
+            strokeWeight(8)
+            line(910, 330, 995, 330) 
+         
+            
+        if(exit_condition):
+            strokeWeight(8)
+            line(910, 835, 995, 855)
+            
+        else:
+            strokeWeight(8)
+            line(910, 835, 995, 835)
+            
+        
+        strokeWeight(1)
+        
+obj = Gate(20,True)
     
