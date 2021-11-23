@@ -80,4 +80,129 @@ class Gate:
         strokeWeight(1)
         
 obj = Gate(20,True)
+
+class street:
     
+    def street_design(self):
+        
+        strokeWeight(1)
+        
+        fill(255)   
+
+        rect(0,270,1920,10)
+        
+        rect(0,870,1920,10)
+        
+        rect(0,960,1920,10)   
+                
+        fill(155)
+        
+        rect(0,200,1920,70)
+        
+        rect(0,880,1920,80)
+        
+        noStroke()
+
+        rect(910,270,90,615)  
+        
+        stroke(1)
+        
+        fill(255)
+        
+        rect(0,0,1920,200)
+    
+        
+        fill(26,183,79)
+        
+        rect(0,0,1920,190)
+        
+        
+        
+        fill(216,208,208)
+        
+        rect(30,20,800,150)
+        
+        fill(0)
+        
+        textSize(30)
+        
+        text("Parking Rates:",50,50)
+        
+        text("North City Street",840,250)
+        
+        text("South City Street",840,930)
+        
+        textSize(25)
+        
+        text("$3.00 / Hour            Mon - Fri                       8AM to 6PM", 50,80)
+        
+        text("$2.00 / Hour            Saturday                        8AM to 6PM", 50,115)
+        
+        text("$1.50 / Hour            All Other Times                    ", 50,150)
+        
+
+        
+        fill(216,208,208)
+        
+        rect(890,20,250,150)
+        
+        rect(1200,20,450,150)
+        
+        if(len(occupied)==60):
+            fill(252,13,13)
+            
+        else:            
+            fill(255,168,36)
+            
+        rect(1690,20,200,150)
+        fill(216,208,208)
+        
+        fill(255)
+        textSize(30)
+        text(" SPACES ",1730,70)
+        text(60-len(occupied)/2,1770,130)    
+        fill(216,208,208)
+    
+    
+        strokeWeight(3)
+        circle(1010,95,130)
+        strokeWeight(1)
+        
+        fill(0)
+        triangle(988,58,988,128,1054,95)
+        noFill()
+        
+        
+        rect(1200,20,450,150)
+        
+        fill(0)
+    
+        textSize(22)
+        text("Simulation Values",1320,50)
+        textSize(20)
+        text("Total number of customers :",1250,85)
+        text(no_of_customers,1540,85)
+        
+        global earning
+        
+        if(len(occupied)>0):
+            earning=earning+0.003*(len(occupied)/2)
+            
+        text("Net Revenue :                 $",1250,115)
+        
+        text(earning,1400,115)
+        
+        text("Current number of cars parked :",1250,145)
+        
+        text(len(occupied)/2,1570,145)
+            
+        
+        
+        
+    
+        
+        
+s1=street()
+        
+        
+        
